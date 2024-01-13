@@ -42,7 +42,7 @@ USE youtube_statistics;
 
 ```
 
--- Rank youtuber by subscriber counts 
+Rank youtuber by subscriber counts 
 ```
 SELECT 
 Youtuber as youtuber,
@@ -52,7 +52,7 @@ FROM cleaned_data
 ORDER BY Subscribers DESC
 ```
 
--- Rank category by total video views 
+Rank category by total video views 
 ```
 SELECT 
 Category as category,
@@ -65,7 +65,7 @@ ORDER BY SUM(Video_Views) DESC
 
 
 
--- Views to Subs to Ratio
+Views to Subs to Ratio
 ```
 SELECT 
 Category,
@@ -76,7 +76,7 @@ GROUP By Category
 ORDER BY 2 DESC
 ```
 
--- Views to Subs to Ratio the last 30 days
+Views to Subs to Ratio the last 30 days
 ```
 SELECT 
 Category,
@@ -88,7 +88,7 @@ GROUP By Category
 ORDER BY 2 DESC
 ```
 
--- Average Highest Yearly Earnings per category
+Average Highest Yearly Earnings per category
 ```
 SELECT
 Category AS category,
@@ -99,7 +99,7 @@ GROUP BY Category
 ORDER BY 2 DESC
 ```
 
--- Number of uploads per year
+Number of uploads per year
 ```
 SELECT 
 YEAR(complete_date) as yr,
@@ -110,7 +110,7 @@ GROUP BY YEAR(complete_date)
 ORDER BY 1
 ```
 
--- Gross Tertiary Enrollment Ratio 
+Gross Tertiary Enrollment Ratio 
 ```
 SELECT 
 Country, 
@@ -121,7 +121,7 @@ GROUP BY Country
 ORDER BY AVG(Gross_Tertiary_Education_Enrollment) DESC
 ```
 
--- Unemployment Rate
+Unemployment Rate
 ```
 SELECT 
 Country, 
