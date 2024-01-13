@@ -1,4 +1,4 @@
-# E-Commerce Sales Analysis
+# Top Youtuber Statistics Performance (2022)
 
 ## Authors
 * [rfhtorres28](https://github.com/rfhtorres28)
@@ -130,7 +130,7 @@ ORDER BY 2 DESC
 ![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/61186214-aba9-45bf-ae0d-7d2d6fb2f761)
 ![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/86647b7c-64df-4684-8dad-17979bd6bc27)
 ![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/d6bff16f-750a-4e2c-9be6-563ff3a21880)
-![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/c55a0dad-33e0-4a4d-a0e5-aa73ba3a6737)
+![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/93f38f9d-fab5-4afe-be91-f40120f914ec)
 
 
 
