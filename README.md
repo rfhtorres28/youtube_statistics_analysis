@@ -21,7 +21,7 @@ Hello there! This project is all about the analysis of Performance of Top Youtub
  In the initial phase of data preparation, the following tasks were performed: 
 
  1. Load the CSV file using Python.
- 3. Removed duplicat rows, change the format of column names, detecting and replacing outliers and filling missing values.
+ 3. Removed duplicate rows, change the format of column names, detecting and replacing outliers and filling missing values.
  4. Send the cleaned data to SQL Server for Exploratory Data Analysis
 
 ### Second Phase
