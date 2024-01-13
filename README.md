@@ -40,16 +40,20 @@ Hello there! This project is all about the analysis of Performance of Top Youtub
 CREATE DATABASE youtube_statistics;
 USE youtube_statistics;
 
+```
+
 -- Rank youtuber by subscriber counts 
+```
 SELECT 
 Youtuber as youtuber,
 Subscribers as subs
 INTO youtuber_subs
 FROM cleaned_data
 ORDER BY Subscribers DESC
-
+```
 
 -- Rank category by total video views 
+```
 SELECT 
 Category as category,
 SUM(Video_Views) as views
@@ -57,10 +61,12 @@ INTO total_views
 FROM cleaned_data
 GROUP BY Category
 ORDER BY SUM(Video_Views) DESC
+```
 
 
 
 -- Views to Subs to Ratio
+```
 SELECT 
 Category,
 CAST(SUM(CAST(Video_Views AS float)) / SUM(CAST(Uploads AS float)) / SUM(CAST(Subscribers AS float)) AS FLOAT) as view_subs_ratio
@@ -68,9 +74,10 @@ INTO views_subs
 FROM cleaned_data
 GROUP By Category
 ORDER BY 2 DESC
-
+```
 
 -- Views to Subs to Ratio the last 30 days
+```
 SELECT 
 Category,
 CAST(SUM(CAST(Video_Views_For_The_Last_30_Days AS float)) / SUM(CAST(Uploads AS float)) / SUM(CAST(Subscribers_For_Last_30_Days AS float)) AS FLOAT) as view_subs_ratio
@@ -79,8 +86,10 @@ FROM cleaned_data
 WHERE Subscribers_For_Last_30_Days > 0
 GROUP By Category
 ORDER BY 2 DESC
+```
 
 -- Average Highest Yearly Earnings per category
+```
 SELECT
 Category AS category,
 AVG(Highest_Yearly_Earnings + Lowest_Yearly_Earnings) as avg_earning
@@ -88,17 +97,21 @@ INTO avg_earning
 FROM cleaned_data
 GROUP BY Category
 ORDER BY 2 DESC
+```
 
 -- Number of uploads per year
+```
 SELECT 
 YEAR(complete_date) as yr,
 CAST(AVG(Video_Views) AS BIGINT) as views
 INTO year_views
 FROM cleaned_data
 GROUP BY YEAR(complete_date)
-ORDER BY 1 
+ORDER BY 1
+```
 
 -- Gross Tertiary Enrollment Ratio 
+```
 SELECT 
 Country, 
 AVG(Gross_Tertiary_Education_Enrollment) / 100 as tertiary_enrollment
@@ -106,9 +119,10 @@ INTO tertiary_ratio
 FROM cleaned_data
 GROUP BY Country
 ORDER BY AVG(Gross_Tertiary_Education_Enrollment) DESC
-
+```
 
 -- Unemployment Rate
+```
 SELECT 
 Country, 
 AVG(Unemployment_Rate) / 100 as Unemployment_Rate
@@ -116,8 +130,10 @@ INTO unemployment_rate
 FROM cleaned_data
 GROUP BY Country
 ORDER BY AVG(Unemployment_Rate) DESC
+```
 
--- Avg Earnings by Country
+#### Avg Earnings by Country
+```
 SELECT
 Country,
 AVG(Highest_Yearly_Earnings + Lowest_Yearly_Earnings) as avg_earnings
