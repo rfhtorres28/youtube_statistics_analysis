@@ -37,6 +37,9 @@ Hello there! This project is all about the analysis of Performance of Top Youtub
 ### SQL EDA Implementation 
 
 ```
+CREATE DATABASE youtube_statistics;
+USE youtube_statistics;
+
 -- Rank youtuber by subscriber counts 
 SELECT 
 Youtuber as youtuber,
