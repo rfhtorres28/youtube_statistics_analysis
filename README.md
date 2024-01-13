@@ -1,1 +1,143 @@
-# youtube_statistics_analysis
+# E-Commerce Sales Analysis
+
+## Authors
+* [rfhtorres28](https://github.com/rfhtorres28)
+  
+## Project Overview
+Hello there! This project is all about the analysis of Performance of Top Youtuber in 2022. I performed the analysis using Microsoft SQL Server Management Studio and Python for Data Quality Assessment and Exploratory Data Analysis. For Data Visualization, I used Power BI and Python's Matplotlib and Seaborn Libraries.  
+
+## Data Source
+* The CSV files were downloaded from kaggle website. I created a database on SQL Server and make tables for each file. 
+
+## Tools 
+* SQL Server - Data Wrangling / Exploratory Data Analysis
+* Python - Data Cleaning 
+* Power BI - Data Visualization
+
+  
+# Methods
+
+### First Phase 
+ In the initial phase of data preparation, the following tasks were performed: 
+
+ 1. Load the CSV file using Python.
+ 3. Removed duplicat rows, change the format of column names, detecting and replacing outliers and filling missing values.
+ 4. Send the cleaned data to SQL Server for Exploratory Data Analysis
+
+### Second Phase
+ EDA involves exploring the sales data to answer some of the following questions:
+
+ 1. Which Youtuber has the most subscribers and video views? 
+ 2. What video category has high view to subscriber ratio? 
+ 3. Which country has the highest unemployment rate and gross tertiary enrollment ratio?
+
+### Last Phase
+  For each questions, I used group-by with aggregation method and created a table for it. Each resulting table was transferred to Power Bi for Data Visualization. 
+
+### SQL EDA Implementation 
+
+```
+-- Rank youtuber by subscriber counts 
+SELECT 
+Youtuber as youtuber,
+Subscribers as subs
+INTO youtuber_subs
+FROM cleaned_data
+ORDER BY Subscribers DESC
+
+
+-- Rank category by total video views 
+SELECT 
+Category as category,
+SUM(Video_Views) as views
+INTO total_views
+FROM cleaned_data
+GROUP BY Category
+ORDER BY SUM(Video_Views) DESC
+
+
+
+-- Views to Subs to Ratio
+SELECT 
+Category,
+CAST(SUM(CAST(Video_Views AS float)) / SUM(CAST(Uploads AS float)) / SUM(CAST(Subscribers AS float)) AS FLOAT) as view_subs_ratio
+INTO views_subs
+FROM cleaned_data
+GROUP By Category
+ORDER BY 2 DESC
+
+
+-- Views to Subs to Ratio the last 30 days
+SELECT 
+Category,
+CAST(SUM(CAST(Video_Views_For_The_Last_30_Days AS float)) / SUM(CAST(Uploads AS float)) / SUM(CAST(Subscribers_For_Last_30_Days AS float)) AS FLOAT) as view_subs_ratio
+INTO views_subs_30days
+FROM cleaned_data
+WHERE Subscribers_For_Last_30_Days > 0
+GROUP By Category
+ORDER BY 2 DESC
+
+-- Average Highest Yearly Earnings per category
+SELECT
+Category AS category,
+AVG(Highest_Yearly_Earnings + Lowest_Yearly_Earnings) as avg_earning
+INTO avg_earning
+FROM cleaned_data
+GROUP BY Category
+ORDER BY 2 DESC
+
+-- Number of uploads per year
+SELECT 
+YEAR(complete_date) as yr,
+CAST(AVG(Video_Views) AS BIGINT) as views
+INTO year_views
+FROM cleaned_data
+GROUP BY YEAR(complete_date)
+ORDER BY 1 
+
+-- Gross Tertiary Enrollment Ratio 
+SELECT 
+Country, 
+AVG(Gross_Tertiary_Education_Enrollment) / 100 as tertiary_enrollment
+INTO tertiary_ratio
+FROM cleaned_data
+GROUP BY Country
+ORDER BY AVG(Gross_Tertiary_Education_Enrollment) DESC
+
+
+-- Unemployment Rate
+SELECT 
+Country, 
+AVG(Unemployment_Rate) / 100 as Unemployment_Rate
+INTO unemployment_rate
+FROM cleaned_data
+GROUP BY Country
+ORDER BY AVG(Unemployment_Rate) DESC
+
+-- Avg Earnings by Country
+SELECT
+Country,
+AVG(Highest_Yearly_Earnings + Lowest_Yearly_Earnings) as avg_earnings
+INTO earnings_country
+FROM cleaned_data
+GROUP BY Country
+ORDER BY 2 DESC
+
+```
+
+## Overview of the results
+
+![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/61186214-aba9-45bf-ae0d-7d2d6fb2f761)
+![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/86647b7c-64df-4684-8dad-17979bd6bc27)
+![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/d6bff16f-750a-4e2c-9be6-563ff3a21880)
+![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/c55a0dad-33e0-4a4d-a0e5-aa73ba3a6737)
+
+
+
+### Insights and Recommendation
+
+1. From the graph, we can see that Music has the most views and Travel and Events categories has the least views.
+2. 2006 has the highest amount of views.
+3. In terms of the demographic information, First World Countries has the highest tertiary enrollment ratio and this is expected since they
+have more developed industries leading to higher wages that can support education expenses.
+4. From the scatter plot, the unemployment rate has no linear relationship with the enrollment ratio meaning has nothing to do with the students enrolling in university or college. There are a lot of factors that can affect the tertiary enrollment rate. It can be financial supporting capability of a family, the decision of the student of not going the university and many more. 
