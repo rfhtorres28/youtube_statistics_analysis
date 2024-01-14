@@ -34,6 +34,23 @@ Hello there! This project is all about the analysis of Performance of Top Youtub
 ### Last Phase
   For each questions, I used group-by with aggregation method and created a table for it. Each resulting table was transferred to Power Bi for Data Visualization. 
 
+### Python Data Cleaning
+
+import necessary libraries 
+```
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pyodbc 
+```
+Load the CSV file
+```
+data = pd.read_csv(r"C:\Users\bobby\Desktop\Python\Global Youtube Statistics 2023\Global YouTube Statistics.csv", encoding= 'windows-1252')
+data.head()
+```
+
+
 ### SQL EDA Implementation 
 
 Create a Database
