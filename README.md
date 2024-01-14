@@ -49,6 +49,7 @@ Load the CSV file
 data = pd.read_csv(r"C:\Users\bobby\Desktop\Python\Global Youtube Statistics 2023\Global YouTube Statistics.csv", encoding= 'windows-1252')
 data.head()
 ```
+![mytable](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/8d80160a-2db4-4ad1-8dcc-85ab1922bca1)
 
 
 ### SQL EDA Implementation 
