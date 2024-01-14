@@ -57,7 +57,7 @@ data.columns
 ```
 ![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/9c18ee08-2d9b-4cad-9cba-e8f7eb3fa249)
 
-Replace uncessary characters on each column title
+Replace uncessary characters on each column title and capitalize each word
 ```
 data.columns = data.columns.str.replace(' ','_')  
 data.columns = data.columns.str.replace(' (%)','')  
@@ -104,6 +104,22 @@ Check if there are any duplicate rows
 data.duplicated().any()
 ```
 ![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/c150758d-a69e-4e53-a4fa-718df286b08b)
+
+List all the numeric column
+```
+numeric_column = [ col for col, dt in data.dtypes.items() if ((dt == int) | (dt == float))] 
+numeric_column
+```
+IQR rule to use for the skewed distribution and Standard Deviation Rule for symmetric distribution
+```
+q25, q75 = np.percentile(data['Video_Views'], (25,75))
+iqr = q75 - q25 
+min_1 = q25 - 1.5*iqr 
+max_1 = q75 + 1.5*iqr
+sns.boxplot(x=data['Video_Views']);
+```
+![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/0d5ad4e2-823b-4b23-a470-acc20a873ac4)
+
 
 
 
