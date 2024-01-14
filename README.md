@@ -77,6 +77,27 @@ data = data[['Youtuber', 'Subscribers', 'Video_Views', 'Category',
        'Unemployment_Rate', 'Urban_Population', 'Latitude', 'Longitude']]
 ```
 
+Replace underscore character with space for each object column
+```
+data['Youtuber'] = data['Youtuber'].str.replace('_', ' ')
+data['Category'] = data['Category'].str.replace('_', ' ')
+data['Country'] = data['Country'].str.replace('_', ' ')
+data['Channel_Type'] = data['Channel_Type'].str.replace('_', ' ')
+data['Created_Month'] = data['Created_Month'].str.replace('_', ' ')
+```
+Capitalize each word for each object column
+```
+data['Youtuber'] = data['Youtuber'].str.title()
+data['Category'] = data['Category'].str.title()
+data['Country'] = data['Country'].str.title()
+data['Channel_Type'] = data['Channel_Type'].str.title()
+data['Created_Month'] = data['Created_Month'].str.title()
+```
+Check if the format is good
+```
+data.loc[:, object_column] 
+``
+![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/3f92bc47-2378-4674-b2f9-c31f2ba0870b)
 
 
 
