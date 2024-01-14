@@ -4,14 +4,13 @@
 * [rfhtorres28](https://github.com/rfhtorres28)
   
 ## Project Overview
-Hello there! This project is all about the analysis of Performance of Top Youtuber in 2022. I performed the analysis using Microsoft SQL Server Management Studio and Python for Data Quality Assessment and Exploratory Data Analysis. I used Power BI for Data Visualization. 
-
+Hello there! This project is all about the analysis of Performance of Top Youtuber in 2022. I performed the analysis using Python and Microsoft Server Management Studio for Data Quality Assessment and Exploratory Data Analysis. I used python for data cleaning since it has more statistical tools that can help me detect and assess outliers for numeric data. It has also boxplot graphs for easy visualization of outliers. I performed Data Visualization on Power BI. 
 ## Data Source
 * The CSV files were downloaded from kaggle website. I created a database on SQL Server and make tables for each file. 
 
 ## Tools 
-* SQL Server - Data Wrangling / Exploratory Data Analysis
 * Python - Data Cleaning 
+* SQL Server - Exploratory Data Analysis
 * Power BI - Data Visualization
 
   
