@@ -34,7 +34,7 @@ Hello there! This project is all about the analysis of Performance of Top Youtub
 ### Last Phase
   For each questions, I used group-by with aggregation method and created a table for it. Each resulting table was transferred to Power Bi for Data Visualization. 
 
-### Python Data Cleaning
+## Python Data Cleaning
 
 import necessary libraries 
 ```
@@ -148,7 +148,7 @@ sns.boxplot(x=data['Video_Views']);
 
 
 
-### SQL EDA Implementation 
+## SQL EDA Implementation 
 
 Create a Database
 ```
