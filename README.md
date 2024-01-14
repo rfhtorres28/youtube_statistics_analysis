@@ -1,10 +1,10 @@
-# Top Youtuber Statistics Performance (2022)
+# Top Youtubers Statistics Performance (2022)
 
 ## Author
 * [rfhtorres28](https://github.com/rfhtorres28)
   
 ## Project Overview
-Hello there! This project is all about the analysis of Performance of Top Youtuber with Demographics Information in 2022. 
+Hello there! This project is all about the analysis of Performance of Top Youtubers with Demographics Information in 2022. 
 
 ## Data Source
 * The CSV files were downloaded from kaggle website. I created a database on SQL Server and make a table for the cleaned data after Data Cleaning from Python. 
