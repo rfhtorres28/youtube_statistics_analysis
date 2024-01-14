@@ -1,6 +1,6 @@
 # Top Youtuber Statistics Performance (2022)
 
-## Authors
+## Author
 * [rfhtorres28](https://github.com/rfhtorres28)
   
 ## Project Overview
