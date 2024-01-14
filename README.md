@@ -177,7 +177,6 @@ ORDER BY 2 DESC
 ## Overview_of_the_Results
 
 ![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/61186214-aba9-45bf-ae0d-7d2d6fb2f761)
-![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/86647b7c-64df-4684-8dad-17979bd6bc27)
 ![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/d0f87482-9e71-421b-a0a5-c07a3c53abb6)
 ![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/93f38f9d-fab5-4afe-be91-f40120f914ec)
 
