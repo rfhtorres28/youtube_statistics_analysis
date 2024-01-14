@@ -96,8 +96,14 @@ data['Created_Month'] = data['Created_Month'].str.title()
 Check if the format is good
 ```
 data.loc[:, object_column] 
-``
-![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/3f92bc47-2378-4674-b2f9-c31f2ba0870b)
+```
+![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/da3c8961-619b-4fc7-8476-bdedda72d006)
+
+Check if there are any duplicate rows
+```
+data.duplicated().any()
+```
+![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/c150758d-a69e-4e53-a4fa-718df286b08b)
 
 
 
