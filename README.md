@@ -32,7 +32,7 @@ Hello there! This project is all about the analysis of Performance of Top Youtub
  3. Which country has the highest unemployment rate and gross tertiary enrollment ratio?
 
 ### Last Phase
-  For each questions, I used group-by with aggregation method and created a table for it. Each resulting table was transferred to Power Bi for Data Visualization. 
+  For each questions, I used group-by with aggregation method and created a table for it. Each resulting table was transferred to Power BI for Data Visualization. 
 
 ## Python Data Cleaning Process 
 Notebook file for Data Cleaning is uploaded in the repository section. 
