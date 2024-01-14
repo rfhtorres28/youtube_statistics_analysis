@@ -15,7 +15,7 @@ Hello there! This project is all about the analysis of Performance of Top Youtub
 * Power BI - Data Visualization
 
   
-# Methods
+## Methods
 I performed the Data Cleaning first in Python then load the cleaned data to SQL Server for Data  Exploratory Data Analysis. I used again python for data cleaning since it has more statistical tools that can help me detect and assess outliers for numeric data columns. It has also boxplot graphs for easy visualization of outliers. I performed Data Visualization solely on Power BI. 
 
 ### First Phase 
@@ -155,7 +155,7 @@ GROUP BY Country
 ORDER BY AVG(Unemployment_Rate) DESC
 ```
 
-#### Avg Earnings by Country
+Avg Earnings by Country
 ```
 SELECT
 Country,
