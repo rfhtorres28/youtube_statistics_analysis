@@ -105,7 +105,7 @@ data.duplicated().any()
 ```
 ![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/c150758d-a69e-4e53-a4fa-718df286b08b)
 
-List all the numeric column
+List all the numeric column for detection of outliers
 ```
 numeric_column = [ col for col, dt in data.dtypes.items() if ((dt == int) | (dt == float))] 
 numeric_column
@@ -120,8 +120,13 @@ sns.boxplot(x=data['Video_Views']);
 ```
 ![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/0d5ad4e2-823b-4b23-a470-acc20a873ac4)
 
+Show some of the outliers in the video views
+```
+data['Video_Views'].loc[data['Video_Views'] > max_1].head()
+```
+![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/894e2f67-7a96-4ed2-8076-80b48cc3ac4a)
 
-
+* In this case, we will retain these values since they are valid number of video views in youtube
 
 
 
