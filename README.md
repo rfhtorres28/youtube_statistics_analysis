@@ -34,125 +34,24 @@ Hello there! This project is all about the analysis of Performance of Top Youtub
 ### Last Phase
   For each questions, I used group-by with aggregation method and created a table for it. Each resulting table was transferred to Power Bi for Data Visualization. 
 
-## Python Data Cleaning
-
-import necessary libraries 
-```
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-import pyodbc 
-```
-Load the CSV file
-```
-data = pd.read_csv(r"C:\Users\bobby\Desktop\Python\Global Youtube Statistics 2023\Global YouTube Statistics.csv", encoding= 'windows-1252')
-data.head()
-```
-![mytable](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/8d80160a-2db4-4ad1-8dcc-85ab1922bca1)
-
-Inspect unecessary characters from the column
-```
-data.columns
-```
-![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/9c18ee08-2d9b-4cad-9cba-e8f7eb3fa249)
-
-Replace uncessary characters on each column title and capitalize each word
-```
-data.columns = data.columns.str.replace(' ','_')  
-data.columns = data.columns.str.replace(' (%)','')  
-data.columns = data.columns.str.replace('_(%)','')  
-data.columns = data.columns.str.title()
-```
-Drop duplicate columns. In this case, Youtuber and title has the same category values. Abbreviation also is not necessary since there is already the country column
-```
-data = data[['Youtuber', 'Subscribers', 'Video_Views', 'Category',
-       'Uploads', 'Country', 'Channel_Type',
-       'Video_Views_Rank', 'Country_Rank', 'Channel_Type_Rank',
-       'Video_Views_For_The_Last_30_Days', 'Lowest_Monthly_Earnings',
-       'Highest_Monthly_Earnings', 'Lowest_Yearly_Earnings',
-       'Highest_Yearly_Earnings', 'Subscribers_For_Last_30_Days',
-       'Created_Year', 'Created_Month', 'Created_Date',
-       'Gross_Tertiary_Education_Enrollment', 'Population',
-       'Unemployment_Rate', 'Urban_Population', 'Latitude', 'Longitude']]
-```
-
-Replace underscore character with space for each object column
-```
-data['Youtuber'] = data['Youtuber'].str.replace('_', ' ')
-data['Category'] = data['Category'].str.replace('_', ' ')
-data['Country'] = data['Country'].str.replace('_', ' ')
-data['Channel_Type'] = data['Channel_Type'].str.replace('_', ' ')
-data['Created_Month'] = data['Created_Month'].str.replace('_', ' ')
-```
-Capitalize each word for each object column
-```
-data['Youtuber'] = data['Youtuber'].str.title()
-data['Category'] = data['Category'].str.title()
-data['Country'] = data['Country'].str.title()
-data['Channel_Type'] = data['Channel_Type'].str.title()
-data['Created_Month'] = data['Created_Month'].str.title()
-```
-Check if the format is good
-```
-data.loc[:, object_column] 
-```
-![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/da3c8961-619b-4fc7-8476-bdedda72d006)
-
-Check if there are any duplicate rows
-```
-data.duplicated().any()
-```
-![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/c150758d-a69e-4e53-a4fa-718df286b08b)
-
-List all the numeric column for detection of outliers
-```
-numeric_column = [ col for col, dt in data.dtypes.items() if ((dt == int) | (dt == float))] 
-numeric_column
-```
-IQR rule to use for the skewed distribution and Standard Deviation Rule for symmetric distribution
-```
-q25, q75 = np.percentile(data['Video_Views'], (25,75))
-iqr = q75 - q25 
-min_1 = q25 - 1.5*iqr 
-max_1 = q75 + 1.5*iqr
-sns.boxplot(x=data['Video_Views']);
-```
-![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/0d5ad4e2-823b-4b23-a470-acc20a873ac4)
-
-Show some of the outliers in the video views
-```
-data['Video_Views'].loc[data['Video_Views'] > max_1].head()
-```
-![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/894e2f67-7a96-4ed2-8076-80b48cc3ac4a)
-
-* In this case, we will retain these values since they are valid number of video views in youtube
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## Python Data Cleaning Process 
+1. Load the CSV file using pd.read_csv()
+2. Remove unecessary characters on column title and capitalize each word.
+3. Repeat step 2 for each category columns.
+4. Select necessary columns for analysis.
+5. Drop duplicate rows
+6. Detect outliers by graphing each numeric column using boxplot.
+7. If the graph is skewed distribution and has potential outliers, use inter quartile rule for removing outliers.
+8. If the graph is symmetric distribution, use standard deviation rule for removing outliers.
+9. If the outliers are valid values for each column, just retain them.
+10. If the count of outliers are almost 10% of the total values on that column, retain them. Removing the outliers or replacing them can affect the accuracy of the result since 10% is significant.
+11. Detect null values and replace them with zero or median value.
+12. If the numeric column has null values with extreme outliers, use the median value as a replacement for null values instead of mean value since it can be affected due to presence of extreme outliers.
+13. For categorical column, if the number of null values is significant, I replace them with 'Others' category for country and channel type column.
+14. Check if each columns has correct data types.
+15. For Month, Year and Day column, I combine them into one column then convert it to datetime format.
+16. Transfer the cleaned dataframe to SQL Server
+    
 ## SQL EDA Implementation 
 
 Create a Database
