@@ -51,6 +51,59 @@ data.head()
 ```
 ![mytable](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/8d80160a-2db4-4ad1-8dcc-85ab1922bca1)
 
+Inspect unecessary characters from the column
+```
+data.columns
+```
+![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/9c18ee08-2d9b-4cad-9cba-e8f7eb3fa249)
+
+Replace uncessary characters on each column title
+```
+data.columns = data.columns.str.replace(' ','_')  
+data.columns = data.columns.str.replace(' (%)','')  
+data.columns = data.columns.str.replace('_(%)','')  
+data.columns = data.columns.str.title()
+```
+Drop duplicate columns. In this case, Youtuber and title has the same category values. Abbreviation also is not necessary since there is already the country column
+```
+data = data[['Youtuber', 'Subscribers', 'Video_Views', 'Category',
+       'Uploads', 'Country', 'Channel_Type',
+       'Video_Views_Rank', 'Country_Rank', 'Channel_Type_Rank',
+       'Video_Views_For_The_Last_30_Days', 'Lowest_Monthly_Earnings',
+       'Highest_Monthly_Earnings', 'Lowest_Yearly_Earnings',
+       'Highest_Yearly_Earnings', 'Subscribers_For_Last_30_Days',
+       'Created_Year', 'Created_Month', 'Created_Date',
+       'Gross_Tertiary_Education_Enrollment', 'Population',
+       'Unemployment_Rate', 'Urban_Population', 'Latitude', 'Longitude']]
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### SQL EDA Implementation 
 
