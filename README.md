@@ -2,6 +2,13 @@
 
 ## Author
 * [rfhtorres28](https://github.com/rfhtorres28)
+
+## Table of Contents
+* [Methods](#Methods)
+* [Data_Cleaning_Process](#Data_Cleaning_Process)
+* [SQL_EDA_Implementation](#SQL_EDA_Implementation)
+* [Overview_of_the_Results](#Overview_of_the_Results)
+* [Insights_and_Recommendation](#Insights_and_Recommendation)
   
 ## Project Overview
 Hello there! This project is all about the analysis of Performance of Top Youtubers with Demographics Information in 2022. 
@@ -35,7 +42,7 @@ I performed the Data Cleaning first in Python then load the cleaned data to SQL 
 ### Last Phase
   For each questions, I used group-by with aggregation method and created a table for it. Each resulting table was transferred to Power BI for Data Visualization. 
 
-## Python Data Cleaning Process 
+## Data_Cleaning_Process 
 Notebook file for Data Cleaning is uploaded in the repository section. 
 
 Steps: 
@@ -57,7 +64,7 @@ Steps:
 15. For Month, Year and Day column, I combine them into one column then convert it to datetime format.
 16. Transfer the cleaned dataframe to SQL Server for Exploratory Data Analysis.
 
-## SQL EDA Implementation 
+## SQL_EDA_Implementation 
 
 Create a Database
 ```
@@ -167,7 +174,7 @@ ORDER BY 2 DESC
 
 ```
 
-## Overview of the results
+## Overview_of_the_results
 
 ![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/61186214-aba9-45bf-ae0d-7d2d6fb2f761)
 ![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/86647b7c-64df-4684-8dad-17979bd6bc27)
