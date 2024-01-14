@@ -174,7 +174,7 @@ ORDER BY 2 DESC
 
 ```
 
-## Overview_of_the_results
+## Overview_of_the_Results
 
 ![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/61186214-aba9-45bf-ae0d-7d2d6fb2f761)
 ![image](https://github.com/rfhtorres28/youtube_statistics_analysis/assets/153373159/86647b7c-64df-4684-8dad-17979bd6bc27)
