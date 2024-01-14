@@ -35,6 +35,10 @@ Hello there! This project is all about the analysis of Performance of Top Youtub
   For each questions, I used group-by with aggregation method and created a table for it. Each resulting table was transferred to Power Bi for Data Visualization. 
 
 ## Python Data Cleaning Process 
+Notebook file for Data Cleaning is uploaded in the repository section. 
+
+Steps: 
+
 1. Load the CSV file using pd.read_csv()
 2. Remove unecessary characters on column title and capitalize each word.
 3. Repeat step 2 for each category columns.
@@ -50,8 +54,8 @@ Hello there! This project is all about the analysis of Performance of Top Youtub
 13. For categorical column, if the number of null values is significant, I replace them with 'Others' category for country and channel type column.
 14. Check if each columns has correct data types.
 15. For Month, Year and Day column, I combine them into one column then convert it to datetime format.
-16. Transfer the cleaned dataframe to SQL Server
-    
+16. Transfer the cleaned dataframe to SQL Server for Exploratory Data Analysis.
+
 ## SQL EDA Implementation 
 
 Create a Database
