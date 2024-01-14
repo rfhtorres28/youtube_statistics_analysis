@@ -175,7 +175,7 @@ ORDER BY 2 DESC
 
 
 
-### Insights
+## Insights
 
 1. From the graph, we can see that Music has the most views and Travel and Events categories has the least views.
 2. 2006 has the highest amount of views.
