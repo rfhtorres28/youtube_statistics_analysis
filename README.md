@@ -11,7 +11,7 @@ Hello there! This project is all about the analysis of Performance of Top Youtub
 * [Data_Cleaning_Process](#Data_Cleaning_Process)
 * [SQL_EDA_Implementation](#SQL_EDA_Implementation)
 * [Overview_of_the_Results](#Overview_of_the_Results)
-* [Insights_and_Recommendation](#Insights_and_Recommendation)
+* [Insights](#Insights)
 
 ## Data Source
 * The CSV files were downloaded from kaggle website. I created a database on SQL Server and make a table for the cleaned data after Data Cleaning from Python. 
